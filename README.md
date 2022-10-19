@@ -65,14 +65,6 @@ npm install --save-dev --save-exact @types/leaflet
 Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
 Note: There are still a few other things remaining to do for Leaflet that we won't detail here.
 
-### JHipster Control Center
-
-JHipster Control Center can help you manage and control your application(s). You can start a local control center server (accessible on http://localhost:7419) with:
-
-```
-docker-compose -f src/main/docker/jhipster-control-center.yml up
-```
-
 ## Building for production
 
 ### Packaging as jar
