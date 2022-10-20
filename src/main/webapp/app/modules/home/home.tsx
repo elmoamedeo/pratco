@@ -6,82 +6,96 @@ import { Link } from 'react-router-dom';
 import { Row, Col, Alert } from 'reactstrap';
 
 import { useAppSelector } from 'app/config/store';
+import { PartnersList } from './components/PartnersList/PartnersList';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
 
   return (
-    <Row>
-      <Col md="3" className="pad">
-        <span className="hipster rounded" />
-      </Col>
-      <Col md="9">
-        <h2>Welcome, Java Hipster!</h2>
-        <p className="lead">This is your homepage</p>
-        {account?.login ? (
-          <div>
-            <Alert color="success">You are logged in as user &quot;{account.login}&quot;.</Alert>
+    <>
+      <Row>
+        <Col md="7" className="pad">
+          <span className="hipster rounded" />
+        </Col>
+
+        <Col md="2" className="second-col-container">
+          <div className="second-col-wrapper">
+            <span className="second-col-content">
+              Coma bem, pagando pouco <span className="special-content">e de quebra</span>, ajude o meio ambiente
+            </span>
           </div>
-        ) : (
-          <div>
-            <Alert color="warning">
-              If you want to
-              <span>&nbsp;</span>
-              <Link to="/login" className="alert-link">
-                sign in
+
+          <Row className="buttons-row">
+            <Col className="buttons-col">
+              <Link to="/login" className="btn login-btn">
+                LOGIN
               </Link>
-              , you can try the default accounts:
-              <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;) <br />- User (login=&quot;user&quot; and
-              password=&quot;user&quot;).
-            </Alert>
+            </Col>
 
-            <Alert color="warning">
-              You don&apos;t have an account yet?&nbsp;
-              <Link to="/account/register" className="alert-link">
-                Register a new account
+            <Col className="buttons-col buttons-separator">
+              <span>
+                <strong>ou</strong>
+              </span>
+            </Col>
+            <Col className="buttons-col">
+              <Link to="/account/register" className="btn register-btn">
+                CADASTRE-SE
               </Link>
-            </Alert>
-          </div>
-        )}
-        <p>If you have any question on JHipster:</p>
+            </Col>
+          </Row>
 
-        <ul>
-          <li>
-            <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
-              JHipster homepage
-            </a>
-          </li>
-          <li>
-            <a href="https://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">
-              JHipster on Stack Overflow
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">
-              JHipster bug tracker
-            </a>
-          </li>
-          <li>
-            <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-              JHipster public chat room
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">
-              follow @jhipster on Twitter
-            </a>
-          </li>
-        </ul>
+          {account?.login ? (
+            <div>
+              <Alert color="success">You are logged in as user &quot;{account.login}&quot;.</Alert>
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </Col>
+      </Row>
 
-        <p>
-          If you like JHipster, don&apos;t forget to give us a star on{' '}
-          <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          !
-        </p>
-      </Col>
-    </Row>
+      <Row>
+        <span className="partners-list-title">
+          Empresas que ja aderiram ao <span className="special-content"> movimento</span>
+        </span>
+      </Row>
+
+      <Row className="partners-row">
+        <PartnersList />
+      </Row>
+
+      <div className="line" />
+
+      <Row className="about-us-row">
+        <Col className="about-us-text">
+          <h1 className="about-us-content-title">
+            <strong>
+              Ajude a combater o <span className="special-content">desperdício</span> alimentar
+            </strong>
+          </h1>
+          <p className="about-us-content">
+            Estima-se que 931 milhões de toneladas de alimentos, ou 17% do total de alimentos disponíveis aos consumidores em 2019, foram
+            para o lixo de residências, varejo, restaurantes e outros serviços alimentares. É o que aponta uma nova pesquisa da ONU que visa
+            apoiar os esforços globais para reduzir pela metade o desperdício de alimentos até 2030.
+          </p>
+          <p className="about-us-content">
+            Nossa solução visa conectar empresas com ONGs/pessoas para comercializar produtos próximos ao vencimento por um melhor preço.
+          </p>
+          <p className="about-us-content">
+            Evitando o desperdício de alimentos e levando as empresas evitarem prejuízos financeiros e permitindo que os compradores possam
+            adquirir tais produtos com preço reduzido.
+          </p>
+        </Col>
+
+        <Col className="about-us-image">
+          <img width="559px" height="559px" src="./content/images/sobre-nos.svg" alt="Sem desperdícios" />
+        </Col>
+
+        <Row>
+          <button className="join-us-btn">Faça parte desta causa</button>
+        </Row>
+      </Row>
+    </>
   );
 };
 
