@@ -30,6 +30,7 @@ Main page styles
 
 .login-btn {
   background-color: #44ee77;
+  width: 155px;
 }
 
 .register-btn {
@@ -37,8 +38,11 @@ Main page styles
 }
 
 .buttons-row {
-  width: 400px;
+  width: 100%;
+  max-width: 450px;
+  margin-top: 36px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -57,12 +61,14 @@ Main page styles
 }
 
 .buttons-separator {
-  font-size: 10px;
+  width: fit-content;
+  font-size: 15px;
   color: #000000;
 }
 
 .second-col-container {
-  width: 580px;
+  width: 40%;
+  max-width: 580px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -72,6 +78,7 @@ Main page styles
 .second-col-content {
   width: 400px;
   flex-wrap: wrap;
+  line-height: 46px;
 }
 
 .second-col-wrapper {
@@ -91,4 +98,94 @@ Main page styles
   margin: 0 auto 20px;
   font-size: 32px;
   font-weight: bold;
+}
+
+.partners-row {
+  margin-bottom: 46px;
+}
+
+.line {
+  position: relative;
+  height: 1px;
+  border: 1px solid #44ee77;
+  width: 85%;
+  margin: 0 auto 75px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    transform: rotate(-45deg) translateX(50%);
+    inset: unset;
+    right: 100%;
+    width: 7px;
+    height: 7px;
+    background-color: #44ee77;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    transform: rotate(-45deg) translateX(50%);
+    inset: unset;
+    top: 50%;
+    right: 0;
+    width: 7px;
+    height: 7px;
+    background-color: #44ee77;
+  }
+}
+
+.about-us-row {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+.about-us-text {
+  max-width: 521px;
+}
+
+.about-us-image {
+  display: block;
+  width: 559px;
+  max-width: 559px;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 521px;
+    height: 521px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -43%);
+    background-color: #44ee77;
+    border-radius: 15px;
+    z-index: -1;
+  }
+}
+
+.about-us-content-title {
+  font-size: 45px;
+  margin-bottom: 55px;
+}
+
+.about-us-content {
+  font-size: 22px;
+  line-height: 27px;
+  text-align: justify;
+  font-weight: 700;
+}
+
+.join-us-btn {
+  border: none;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+  background-color: #019992;
+  width: 456px;
+  height: 62px;
+  margin: 92px auto;
 }
