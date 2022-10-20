@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Row, Col, Alert } from 'reactstrap';
 
 import { useAppSelector } from 'app/config/store';
+import { PartnersList } from './components/PartnersList/PartnersList';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
@@ -13,12 +14,11 @@ export const Home = () => {
   return (
     <>
       <Row>
-        <Col md="5" className="pad">
-          <div className="hipster rounded">
-            <span className="logo-backdrop" />
-          </div>
+        <Col md="7" className="pad">
+          <span className="hipster rounded" />
         </Col>
-        <Col sm="4" className="teste">
+
+        <Col md="2" className="second-col-container">
           <div className="second-col-wrapper">
             <span className="second-col-content">
               Coma bem, pagando pouco <span className="special-content">e de quebra,</span> ajude o meio ambiente
@@ -53,7 +53,13 @@ export const Home = () => {
       </Row>
 
       <Row>
-        <Col></Col>
+        <span className="partners-list-title">
+          Empresas que ja aderiram ao <span className="special-content"> movimento</span>
+        </span>
+      </Row>
+
+      <Row>
+        <PartnersList />
       </Row>
     </>
   );

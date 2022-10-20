@@ -1,12 +1,21 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
-.hipster {
-  display: inline-block;
+.card {
+  border: none;
   width: 100%;
-  height: 497px;
+  padding: 0;
+}
+
+.hipster {
+  display: flex;
+  width: 75%;
+  height: 400px;
   background: url('../../../content/images/logo-landing-page.svg') center no-repeat;
+  background-size: auto;
   background-size: contain;
+  align-content: center;
+  margin: 0 auto;
 }
 
 .btn {
@@ -28,7 +37,10 @@ Main page styles
 }
 
 .buttons-row {
-  margin: 0 auto;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .buttons-row,
@@ -40,24 +52,43 @@ Main page styles
 
 .buttons-col {
   display: flex;
-  justify-content: space-around;
   width: max-content;
+  justify-content: space-around;
 }
 
 .buttons-separator {
   font-size: 10px;
+  color: #000000;
+}
+
+.second-col-container {
+  width: 580px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.second-col-content {
+  width: 400px;
+  flex-wrap: wrap;
 }
 
 .second-col-wrapper {
-  width: 50%;
+  margin: 0 auto;
   font-size: 38px;
   font-weight: bold;
-  margin: 0 auto;
 }
-
-// .second-col-content {
-// }
 
 .special-content {
   color: #019992;
+}
+
+.partners-list-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  font-size: 32px;
+  font-weight: bold;
 }

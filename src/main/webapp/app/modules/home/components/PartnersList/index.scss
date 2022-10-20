@@ -1,0 +1,37 @@
+.partners-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#saladinhas {
+  background: url('./assets/img/saladinhas.svg') center no-repeat;
+  background-size: auto;
+  background-size: contain;
+  border: transparent;
+}
+
+#sushi {
+  background: url('./assets/img/sushi.svg') center no-repeat;
+  background-size: auto;
+  background-size: contain;
+}
+
+#darcins {
+  background: url('./assets/img/darcins.svg') center no-repeat;
+  background-size: auto;
+  background-size: contain;
+}
+
+#teia {
+  background: url('./assets/img/teia.svg') center no-repeat;
+  background-size: auto;
+  background-size: contain;
+}
+
+#padeiro {
+  background: url('./assets/img/padeiro.svg') center no-repeat;
+  background-size: auto;
+  background-size: contain;
+}
